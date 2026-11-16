@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Calculator{
-    public static void run(String[] args) {
+    public static void main(String[] args) {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("What mode do you want (N)ormal or (S)cientific:");
         char mode = myScanner.next().charAt(0);
