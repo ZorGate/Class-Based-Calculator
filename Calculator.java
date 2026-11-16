@@ -11,10 +11,10 @@ public class Calculator{
         char op = myScanner.next().charAt(0);
         System.out.println("First number?");
         System.out.print(">>");
-        double firstNumber = myScanner.nextDouble();
+        int firstNumber = myScanner.nextInt();
         System.out.println("Second number?");
         System.out.print(">>");
-        double secondNumber = myScanner.nextDouble();
+        int secondNumber = myScanner.nextInt();
         if (mode == 'N') {
             System.out.println(StandardCalculator.calculate(firstNumber, secondNumber, op));
         } else if (mode == 'S') {
