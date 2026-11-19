@@ -1,16 +1,11 @@
-import java.rmi.StubNotFoundException;
-
 public class ScientificCalculator {
-    public static String calculate(int num1, int num2, char mode) {
-        return toSciNot(StandardCalculator.calculate(num1, num2, mode));
+    public static String calculate(float num1, float num2, char mode, int sigFigs) {
+        return toSciNot(StandardCalculator.calculate(num1, num2, mode), sigFigs);
     }
-    public static String toSciNot(float stdNum) {
-        String numString = String.format("%6.3e", stdNum);
-        int plusPos = numString.indexOf("+");
-        String expValue = numString.substring(plusPos+1);
-        /*while (numString.charAt(plusPos+1) == '0') {
-            expValue = expValue.substring(1);
-        }*/
-        return numString.replace("e+"," * 10^");
+    public static String toSciNot(float stdNum, int sigFigs) {
+        String numString = String.format("%6."+sigFigs+"e", stdNum);
+        int ePos = numString.indexOf("e");
+        String withZeroes = numString.replace("e+"," * 10^");
+        return withZeroes.substring(0,ePos-1) + withZeroes.substring(ePos);
     }
 }

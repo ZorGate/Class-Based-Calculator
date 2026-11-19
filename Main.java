@@ -1,5 +1,5 @@
 public class Main {
-    public static int calculate(int num1, int num2, char mode) {
+    public static float calculate(float num1, float num2, char mode) {
         if (mode == 'A') {
             return num1 + num2;
         } else if (mode == 'S') {

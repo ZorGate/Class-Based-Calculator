@@ -7,6 +7,7 @@ public class test {
         System.out.print(">>");
         float input = Float.parseFloat(myScanner.nextLine());
         System.out.println(input);
-        System.out.println(ScientificCalculator.toSciNot(input));
+        System.out.println(ScientificCalculator.toSciNot(input, 3));
+        myScanner.close();
     }
 }
