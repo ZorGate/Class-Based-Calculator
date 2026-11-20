@@ -14,7 +14,12 @@ To check if yor download was successful, run
 java --version
 ```
 
-Lastly, to run the program, navigate to the folder that you cloned the repo to, and enter in the terminal:
+Navigate to the folder that you cloned the repo to:
+```sh
+cd Class-Based-Calculator
+```
+
+And run the program!
 ```sh
 java Calculator
 ```
