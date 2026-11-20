@@ -5,6 +5,8 @@ public class Calculator{
         Scanner myScanner = new Scanner(System.in);
         char mode = 0;
         char op = 0;
+        float firstNumber;
+        float secondNumber;
         while (true) {
                 System.out.println("What mode do you want (N)ormal or (S)cientific:");
                 System.out.print(">>");
@@ -27,10 +29,17 @@ public class Calculator{
         }
         System.out.println("First number?");
         System.out.print(">>");
-        float firstNumber = myScanner.nextFloat();
-        System.out.println("Second number?");
-        System.out.print(">>");
-        float secondNumber = myScanner.nextFloat();
+        firstNumber = myScanner.nextFloat();
+        while (true) {
+            System.out.println("Second number?");
+            System.out.print(">>");
+            secondNumber = myScanner.nextFloat();
+            if (op == 'D' & secondNumber == 0) {
+                System.out.println("nuh uh");
+            } else {
+                break;
+            }
+        }
         System.out.println("How many Significant Figures should it output?");
         System.out.print(">>");
         int sigFigs = myScanner.nextInt();
