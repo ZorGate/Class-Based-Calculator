@@ -1,7 +1,69 @@
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.*;
 import java.util.Scanner;
+import javax.swing.*;
 
 public class Calculator{
     public static void main(String[] args) {
+        JFrame frame = new JFrame();
+        frame.setTitle("Calculator");
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+
+        JPanel headingPanel = new JPanel();
+        JLabel headingLabel = new JLabel("Class Based Calculator - ZorGate - V0.0");
+        headingPanel.add(headingLabel);
+
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints constr = new GridBagConstraints();
+        constr.insets = new Insets(5, 5, 5, 5);
+        constr.anchor = GridBagConstraints.WEST;
+
+        constr.gridx = 0;
+        constr.gridy = 0;
+
+        JLabel Inp1Label = new JLabel("Value 1:");
+        JLabel Inp2Label = new JLabel("Value 2");
+
+        JTextField Inp1Txt = new JTextField(20);
+        JTextField Inp2Txt = new JTextField(20);
+
+        panel.add(Inp1Label, constr);
+        constr.gridx = 1;
+        panel.add(Inp1Txt, constr);
+        constr.gridx = 0;
+        constr.gridy = 1;
+
+        panel.add(Inp2Label, constr);
+        constr.gridx = 1;
+        panel.add(Inp2Txt, constr);
+        constr.gridx = 0;
+        constr.gridy = 2;
+        
+        constr.gridwidth = 2;
+        constr.gridheight = GridBagConstraints.CENTER;
+        
+        JButton button = new JButton("CALCULATE");
+
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                headingLabel.setText("button pressed");
+            }
+        });
+
+        panel.add(button, constr);
+        mainPanel.add(headingPanel);
+        mainPanel.add(panel);
+
+        frame.add(mainPanel);
+        frame.pack();
+        frame.setSize(400,400);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
         Scanner myScanner = new Scanner(System.in);
         char mode = 0;
         char op = 0;
