@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -19,7 +20,6 @@ public class Calculator{
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints constr = new GridBagConstraints();
         constr.insets = new Insets(5, 5, 5, 5);
-        constr.anchor = GridBagConstraints.WEST;
 
         constr.gridx = 0;
         constr.gridy = 0;
@@ -44,18 +44,28 @@ public class Calculator{
         
         constr.gridwidth = 2;
         constr.gridheight = GridBagConstraints.CENTER;
-        
+
         JButton button = new JButton("CALCULATE");
+        GridBagConstraints btnC = new GridBagConstraints();
+        btnC.anchor = GridBagConstraints.CENTER;
+        JPanel btnPanel = new JPanel();
+        btnPanel.add(button,btnC);
+        btnC.gridx = 0;
+        btnC.gridy = 3;
+        button.setBackground(Color.WHITE);
+        button.setForeground(Color.BLACK);
 
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 headingLabel.setText("button pressed");
+                button.setBackground(Color.BLACK);
+                button.setForeground(Color.WHITE);
             }
         });
 
-        panel.add(button, constr);
         mainPanel.add(headingPanel);
         mainPanel.add(panel);
+        mainPanel.add(btnPanel);
 
         frame.add(mainPanel);
         frame.pack();
@@ -64,7 +74,7 @@ public class Calculator{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
-        Scanner myScanner = new Scanner(System.in);
+        /*Scanner myScanner = new Scanner(System.in);
         char mode = 0;
         char op = 0;
         float firstNumber;
@@ -111,6 +121,6 @@ public class Calculator{
         } else {
             System.out.println(ScientificCalculator.calculate(firstNumber, secondNumber, op, sigFigs));
         myScanner.close();
-        }
+        }*/
     }
 }
