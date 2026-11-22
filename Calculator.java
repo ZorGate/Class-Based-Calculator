@@ -14,7 +14,7 @@ public class Calculator{
     public static void main(String[] args) {
         //create the frame + mainpanel
         JFrame frame = new JFrame();
-        frame.setTitle("Calculator");
+        frame.setTitle("Class Based Calculator - ZorGate - V0.0");
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
@@ -80,14 +80,16 @@ public class Calculator{
         //create the text next to each of the text inputs
         JLabel Inp1Label = new JLabel("Value 1:");
         JLabel Inp2Label = new JLabel("Value 2");
+        JLabel SigFigLabel = new  JLabel("Sig Figs: ");
 
         //where the output will show up
         JLabel outLabel = new JLabel("=");
         JLabel output = new JLabel("");
 
         //create the actual text inputs
-        JTextField Inp1Txt = new JTextField(15);
-        JTextField Inp2Txt = new JTextField(15);
+        JTextField Inp1Txt = new JTextField(10);
+        JTextField Inp2Txt = new JTextField(10);
+        JTextField SigFigTxt = new JTextField(10);
 
         //add the inputs and labels
         textPanel.add(Inp1Label, constr);
@@ -100,6 +102,11 @@ public class Calculator{
         textPanel.add(Inp2Txt, constr);
         constr.gridx = 0;
         constr.gridy = 2;
+        textPanel.add(SigFigLabel, constr);
+        constr.gridx = 1;
+        textPanel.add(SigFigTxt, constr);
+        constr.gridx = 0;
+        constr.gridy = 3;
 
         //add output text
         textPanel.add(outLabel,constr);
@@ -129,7 +136,8 @@ public class Calculator{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
-        modeButton.addActionListener(e -> {
+        //switch between scientific and standard notation
+        modeButton.addActionListener(m -> {
             if (mode == 'S') {
                 mode = 'N';
                 modeHLabel.setText("Standard");
@@ -143,6 +151,50 @@ public class Calculator{
                 modeButton.setForeground(Color.WHITE);
                 modeButton.setText("Scientific");
             }
+        });
+        add.addActionListener(a -> {
+            op = 'A';
+            add.setBackground(Color.BLACK);
+            add.setForeground(Color.WHITE);
+            sub.setBackground(Color.WHITE);
+            sub.setForeground(Color.BLACK);
+            mul.setBackground(Color.WHITE);
+            mul.setForeground(Color.BLACK);
+            div.setBackground(Color.WHITE);
+            div.setForeground(Color.BLACK);
+        });
+        sub.addActionListener(a -> {
+            op = 'S';
+            add.setBackground(Color.WHITE);
+            add.setForeground(Color.BLACK);
+            sub.setBackground(Color.BLACK);
+            sub.setForeground(Color.WHITE);
+            mul.setBackground(Color.WHITE);
+            mul.setForeground(Color.BLACK);
+            div.setBackground(Color.WHITE);
+            div.setForeground(Color.BLACK);
+        });
+        mul.addActionListener(a -> {
+            op = 'M';
+            add.setBackground(Color.WHITE);
+            add.setForeground(Color.BLACK);
+            sub.setBackground(Color.WHITE);
+            sub.setForeground(Color.BLACK);
+            mul.setBackground(Color.BLACK);
+            mul.setForeground(Color.WHITE);
+            div.setBackground(Color.WHITE);
+            div.setForeground(Color.BLACK);
+        });
+        div.addActionListener(a -> {
+            op = 'D';
+            add.setBackground(Color.WHITE);
+            add.setForeground(Color.BLACK);
+            sub.setBackground(Color.WHITE);
+            sub.setForeground(Color.BLACK);
+            mul.setBackground(Color.WHITE);
+            mul.setForeground(Color.BLACK);
+            div.setBackground(Color.BLACK);
+            div.setForeground(Color.WHITE);
         });
     }
 
