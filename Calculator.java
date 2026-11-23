@@ -87,11 +87,11 @@ public class Calculator{
         JLabel output = new JLabel("");
 
         //create the actual text inputs
-        JFormattedTextField Inp1Txt = new JFormattedTextField(new DecimalFormat("#.#"));
+        JFormattedTextField Inp1Txt = new JFormattedTextField(new DecimalFormat("#.####"));
         Inp1Txt.setColumns(15);
-        JFormattedTextField Inp2Txt = new JFormattedTextField(new DecimalFormat("#.#"));
+        JFormattedTextField Inp2Txt = new JFormattedTextField(new DecimalFormat("#.####"));
         Inp2Txt.setColumns(15);
-        JFormattedTextField SigFigTxt = new JFormattedTextField(new DecimalFormat("#.#"));
+        JFormattedTextField SigFigTxt = new JFormattedTextField(new DecimalFormat("#.####"));
         SigFigTxt.setColumns(15);
 
         Inp1Txt.setValue(0);
