@@ -2,8 +2,7 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.*;
-import java.util.Scanner;
+import java.text.DecimalFormat;
 import javax.swing.*;
 
 public class Calculator{
@@ -11,6 +10,7 @@ public class Calculator{
     static char op = 'A';
     static float firstNumber = 0;
     static float secondNumber = 0;
+    static int sigFigs = 1;
     public static void main(String[] args) {
         //create the frame + mainpanel
         JFrame frame = new JFrame();
@@ -87,9 +87,16 @@ public class Calculator{
         JLabel output = new JLabel("");
 
         //create the actual text inputs
-        JTextField Inp1Txt = new JTextField(10);
-        JTextField Inp2Txt = new JTextField(10);
-        JTextField SigFigTxt = new JTextField(10);
+        JFormattedTextField Inp1Txt = new JFormattedTextField(new DecimalFormat("#.#"));
+        Inp1Txt.setColumns(15);
+        JFormattedTextField Inp2Txt = new JFormattedTextField(new DecimalFormat("#.#"));
+        Inp2Txt.setColumns(15);
+        JFormattedTextField SigFigTxt = new JFormattedTextField(new DecimalFormat("#.#"));
+        SigFigTxt.setColumns(15);
+
+        Inp1Txt.setValue(0);
+        Inp2Txt.setValue(0);
+        SigFigTxt.setValue(0);
 
         //add the inputs and labels
         textPanel.add(Inp1Label, constr);
@@ -123,12 +130,14 @@ public class Calculator{
         calculate.setForeground(Color.BLACK);
         calculate.setFocusPainted(false);
 
+        //
         mainPanel.add(headingPanel);
         mainPanel.add(modePanel);
         mainPanel.add(opPanel);
         mainPanel.add(textPanel);
         mainPanel.add(btnPanel);
 
+        //extra important stuff
         frame.add(mainPanel);
         frame.pack();
         frame.setSize(400,400);
@@ -152,6 +161,8 @@ public class Calculator{
                 modeButton.setText("Scientific");
             }
         });
+
+        //operation selection
         add.addActionListener(a -> {
             op = 'A';
             add.setBackground(Color.BLACK);
@@ -196,50 +207,21 @@ public class Calculator{
             div.setBackground(Color.BLACK);
             div.setForeground(Color.WHITE);
         });
-    }
 
-        /*while (true) {
-                System.out.println("What mode do you want (N)ormal or (S)cientific:");
-                System.out.print(">>");
-                mode = myScanner.next().charAt(0);
-            if (mode == 'S' || mode == 'N') {
-                break;
+        //calculate button
+        calculate.addActionListener(c -> {
+            firstNumber = Float.valueOf(Inp1Txt.getText());
+            secondNumber = Float.valueOf(Inp2Txt.getText());
+            sigFigs = Integer.valueOf(SigFigTxt.getText());
+            if (secondNumber == 0 & op == 'D') {
+                output.setText("nice try");
             } else {
-                System.out.println("err: invalid input, please try again");
+                if (mode == 'S'){
+                    output.setText(ScientificCalculator.calculate(firstNumber, secondNumber, op, sigFigs));
+                } else {
+                    output.setText(String.valueOf(StandardCalculator.calculate(firstNumber, secondNumber, op)));
+                }
             }
-        }
-        while (true) {
-            System.out.println("Operation? (A)ddition, (S)ubtraction, (M)ultiplication, or (D)ivision:");
-            System.out.print(">>");
-            op = myScanner.next().charAt(0);
-            if (op == 'A' || op == 'S' || op == 'M' || op == 'D') {
-                break;
-            } else {
-                System.out.println("err: invalid input, please try again");
-            }
-        }
-        System.out.println("First number?");
-        System.out.print(">>");
-        firstNumber = myScanner.nextFloat();
-        while (true) {
-            System.out.println("Second number?");
-            System.out.print(">>");
-            secondNumber = myScanner.nextFloat();
-            if (op == 'D' & secondNumber == 0) {
-                System.out.println("nuh uh");
-            } else {
-                break;
-            }
-        }
-        System.out.println("How many Significant Figures should it output?");
-        System.out.print(">>");
-        int sigFigs = myScanner.nextInt();
-        System.out.println();
-        if (mode == 'N') {
-            System.out.println(StandardCalculator.calculate(firstNumber, secondNumber, op));
-        } else {
-            System.out.println(ScientificCalculator.calculate(firstNumber, secondNumber, op, sigFigs));
-        myScanner.close();
-        }*/
-    
+        });
+    }
 }

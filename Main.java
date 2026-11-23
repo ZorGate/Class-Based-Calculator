@@ -1,12 +1,12 @@
 public class Main {
-    public static float calculate(float num1, float num2, char mode) {
-        if (mode == 'A') {
+    public static float calculate(float num1, float num2, char op) {
+        if (op == 'A') {
             return num1 + num2;
-        } else if (mode == 'S') {
+        } else if (op == 'S') {
             return num1 - num2;
-        } else if (mode == 'M') {
+        } else if (op == 'M') {
             return num1 * num2;
-        } else if (mode == 'D') {
+        } else if (op == 'D') {
             return num1 / num2;
         } else {
             return 0;
