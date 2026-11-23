@@ -3,8 +3,11 @@ A 4-function Calculator, now with scientific notation!! This project mainly serv
 
 ## How do I run this thing???
 1: Download the .zip from releases
+
 2: Extract the .zip
+
 3: Open the Class-Based-Calculator folder
+
 4: Click on Class-Based-Calculator.exe
 Enjoy!!
 
