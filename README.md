@@ -12,4 +12,4 @@ A 4-function Calculator, now with scientific notation!! This project mainly serv
 Enjoy!!
 
 ## AI DISCLOSURE
-No generative AI was used in the creation of this project, which is part of the reason it took me a full 5 hours to make (lots of going through Java documentation and stack overflow).
+No generative AI was used in the creation of this project, which is part of the reason it took me 14 hours to make (lots of going through Java documentation and stack overflow).
