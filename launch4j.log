@@ -1,0 +1,21 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\ZakirM\OneDrive\Documents\GitHub\Class-Based-Calculator\Class-Based-Calculator.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\ZakirM\OneDrive\Documents\GitHub\Class-Based-Calculator\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = C:\Program Files\Java\jdk-27.0.1.1\
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-27.0.1.1\\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jre1.8.0_513\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_31\bin;C:\Program Files\Git\cmd;C:\Program Files\WSL\;C:\Program Files\Java\jre1.8.0_511\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\ZakirM\AppData\Local\Microsoft\WindowsApps;C:\Users\ZakirM\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ZakirM\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;C:\Users\ZakirM\AppData\Local\GitHubDesktop\bin;C:\Users\ZakirM\AppData\Local\Unity\bin;C:\Users\ZakirM\AppData\Local\Python\bin;C:\Program Files (x86)\Nmap;C:\Program Files\Java\jre1.8.0_513\bin;;C:\Program Files\Java\jdk-27.0.1.1\\bin
+JRE paths:	C:\Program Files\Java\jdk-27.0.1.1\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-27.0.1.1\\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jre1.8.0_513\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_31\bin;C:\Program Files\Git\cmd;C:\Program Files\WSL\;C:\Program Files\Java\jre1.8.0_511\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\ZakirM\AppData\Local\Microsoft\WindowsApps;C:\Users\ZakirM\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ZakirM\AppData\Local\Programs\Microsoft VS Code\bin\copilot-shim;C:\Users\ZakirM\AppData\Local\GitHubDesktop\bin;C:\Users\ZakirM\AppData\Local\Unity\bin;C:\Users\ZakirM\AppData\Local\Python\bin;C:\Program Files (x86)\Nmap;C:\Program Files\Java\jre1.8.0_513\bin;;C:\Program Files\Java\jdk-27.0.1.1\\bin
+Check launcher:	C:\Program Files\Java\jdk-27.0.1.1\bin\javaw.exe (OK)
+Warning:	formatJavaVersion() too many parts added.
+Version string: 1.027.000_001 / 64-Bit (OK)
+Launcher:	C:\Program Files\Java\jdk-27.0.1.1\bin\javaw.exe
+Launcher args:	-jar "C:\Users\ZakirM\OneDrive\Documents\GitHub\Class-Based-Calculator\Class-Based-Calculator.exe"
+Args length:	98/32768 chars
+Exit code:	0
