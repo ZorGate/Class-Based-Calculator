@@ -96,7 +96,7 @@ public class Calculator{
 
         Inp1Txt.setValue(0);
         Inp2Txt.setValue(0);
-        SigFigTxt.setValue(0);
+        SigFigTxt.setValue(1);
 
         //add the inputs and labels
         textPanel.add(Inp1Label, constr);
