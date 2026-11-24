@@ -8,7 +8,9 @@ A 4-function Calculator, now with scientific notation!! This project mainly serv
 
 3: Open the Class-Based-Calculator folder
 
-4: Click on Class-Based-Calculator.exe
+4: Install Java from [here](https://www.java.com/en/download/manual.jsp)
+
+4: Click on Class-Based-Calculator.jar
 Enjoy!!
 
 ## AI DISCLOSURE
